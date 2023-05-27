@@ -2,7 +2,6 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Slider from 'react-slick'
 import Loader from 'react-loader-spinner'
-
 import './index.css'
 
 class Carousel extends Component {
@@ -41,7 +40,7 @@ class Carousel extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autolpay: true,
+      autoplay: true,
       autoplaySpeed: 2000,
     }
     const {offersList} = this.state
@@ -76,4 +75,5 @@ class Carousel extends Component {
     return isLoading ? this.renderLoader() : this.renderCarousel()
   }
 }
+
 export default Carousel

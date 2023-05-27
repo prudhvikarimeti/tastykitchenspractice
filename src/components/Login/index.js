@@ -56,7 +56,7 @@ class Login extends Component {
     const {password} = this.state
     return (
       <>
-        <label htmlFor="password" className="input-label">
+        <label className="input-label" htmlFor="password">
           PASSWORD
         </label>
         <input
@@ -74,7 +74,7 @@ class Login extends Component {
     const {username} = this.state
     return (
       <>
-        <label htmlFor="username" className="input-label">
+        <label className="input-label" htmlFor="username">
           USERNAME
         </label>
         <input
@@ -98,15 +98,15 @@ class Login extends Component {
       <div className="login-form-container">
         <img
           src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633587041/Rectangle_1457_xkvsxy.png"
-          alt="website logo"
           className="login-website-logo-mobile-image"
+          alt="website logo"
         />
         <div className="login-container">
           <form className="form-container" onSubmit={this.submitForm}>
             <img
               src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633608363/Frame_274_mqin4h.png"
-              alt="website logo"
               className="login-website-logo-desktop-image"
+              alt="website logo"
             />
             <h1 className="logo-heading">Tasty Kitchens</h1>
             <h1 className="login-heading">Login</h1>
@@ -115,16 +115,17 @@ class Login extends Component {
             <button type="submit" className="login-button">
               Login
             </button>
-            {showSubmitError && <p className="error-message">{errorMsg}</p>}
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
           </form>
         </div>
         <img
           src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633529531/Rectangle_1456_t19ink.png"
-          alt="website login"
           className="login-image"
+          alt="website login"
         />
       </div>
     )
   }
 }
+
 export default Login

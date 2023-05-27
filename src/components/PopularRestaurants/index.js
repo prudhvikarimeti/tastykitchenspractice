@@ -5,8 +5,7 @@ import {RiArrowDropLeftLine, RiArrowDropRightLine} from 'react-icons/ri'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 
-import RestaurantsHeader from '../RestaurantsHeader'
-
+import RestaurantHeader from '../RestaurantHeader'
 import RestaurantCard from '../RestaurantCard'
 
 import './index.css'
@@ -26,11 +25,11 @@ const sortByOptions = [
 
 class PopularRestaurants extends Component {
   state = {
-    isLoading: false,
     restaurantsList: [],
+    isLoading: false,
     activePage: 1,
-    totalPages: 0,
     sortOption: sortByOptions[1].value,
+    totalPages: 0,
   }
 
   componentDidMount() {
@@ -102,7 +101,7 @@ class PopularRestaurants extends Component {
     const {restaurantsList, sortOption, activePage, totalPages} = this.state
     return (
       <>
-        <RestaurantsHeader
+        <RestaurantHeader
           sortOption={sortOption}
           sortByOptions={sortByOptions}
           updateOption={this.updateOption}
@@ -156,4 +155,5 @@ class PopularRestaurants extends Component {
     return isLoading ? this.renderLoader() : this.renderPopularRestaurants()
   }
 }
+
 export default PopularRestaurants

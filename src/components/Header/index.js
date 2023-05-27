@@ -4,6 +4,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
 import Cookies from 'js-cookie'
+
 import Popup from 'reactjs-popup'
 
 import CartContext from '../../context/CartContext'
@@ -17,9 +18,11 @@ const Header = props => {
 
     history.replace('/login')
   }
+
   const getColor = current => {
     const {history} = props
     if (history.location.pathname === current) {
+      // console.log(history.location.pathname)
       return '#f7931e'
     }
     return '#334155'
@@ -54,7 +57,7 @@ const Header = props => {
               alt="website logo"
             />
           </Link>
-          <h1 className="icon-heading">Tasty Kitchens</h1>
+          <h1 className="icon-heading">Tasty Kitchen</h1>
         </div>
 
         <ul className="nav-menu">
@@ -63,6 +66,7 @@ const Header = props => {
               Home
             </li>
           </Link>
+
           <Link to="/cart" className="nav-link">
             <li className="nav-menu-item" style={{color: getColor('/cart')}}>
               Cart
@@ -79,7 +83,6 @@ const Header = props => {
             </button>
           </li>
         </ul>
-
         <Popup
           trigger={
             <button type="button" className="hamburger-btn">
@@ -122,4 +125,5 @@ const Header = props => {
     </nav>
   )
 }
+
 export default withRouter(Header)
